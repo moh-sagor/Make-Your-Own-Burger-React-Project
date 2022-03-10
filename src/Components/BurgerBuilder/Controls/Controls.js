@@ -32,6 +32,7 @@ const Controls = props => {
                 <h4>Add Ingredients</h4>
             </CardHeader>
             <CardBody>
+                <h5>Add at Least <strong style={{ color: "#D70F64" }}>One</strong> item to purchase</h5>
                 {
                     controls.map(item => {
                         return <BuildControl
@@ -45,8 +46,13 @@ const Controls = props => {
                     })
                 }
             </CardBody>
-            <CardFooter><h5>Price: <strong>{props.price}</strong> BDT </h5></CardFooter>
+            <CardFooter style={{
+                backgroundColor: "#D70F64",
+                color: "white"
+            }} >
+                <h5>Price: <strong>{props.price}</strong> BDT </h5></CardFooter>
+            <Button disabled={!props.purchaseAble} onClick={props.toggleModal}>Oreder Now</Button>
         </Card>
     </div>)
 }
-export default Controls
+export default Controls;
