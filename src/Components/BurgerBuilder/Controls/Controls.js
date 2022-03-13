@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardBody, CardFooter, CardHeader, Button } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 
 const controls = [
@@ -20,6 +21,9 @@ const BuildControl = props => {
 }
 const Controls = props => {
     return (<div className="container ml-md-5" style={{ textAlign: "center" }}>
+        <Button disabled={!props.purchaseAble} color="success" className='btn btn-sm'>
+            <NavLink exact to="/checkout" className="NavLink">Check Out</NavLink>
+        </Button>
         <Card style={{
             marginTop: "30px",
             marginBottom: "20px",
@@ -32,7 +36,7 @@ const Controls = props => {
                 <h4>Add Ingredients</h4>
             </CardHeader>
             <CardBody>
-                <h5>Add at Least <strong style={{ color: "#D70F64" }}>One</strong> item to purchase</h5>
+                <h5>Add at Least <strong style={{ color: "#D70F64" }}>One</strong> item to purchase and <span style={{ color: '#198754' }}>Checkout</span></h5>
                 {
                     controls.map(item => {
                         return <BuildControl
