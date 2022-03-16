@@ -21,7 +21,7 @@ const BuildControl = props => {
 }
 const Controls = props => {
     return (<div className="container ml-md-5" style={{ textAlign: "center" }}>
-        <Button disabled={!props.purchaseAble} color="success" className='btn btn-sm'>
+        <Button style={{ backgroundColor: "#D70F64" }} disabled={!props.purchaseAble} className='btn btn-sm'>
             <NavLink exact to="/checkout" className="NavLink">Check Out</NavLink>
         </Button>
         <Card style={{
@@ -51,11 +51,11 @@ const Controls = props => {
                 }
             </CardBody>
             <CardFooter style={{
-                backgroundColor: "#D70F64",
-                color: "white"
+                backgroundColor: "##000000",
+                color: "black"
             }} >
                 <h5>Price: <strong>{props.price}</strong> BDT </h5></CardFooter>
-            <Button disabled={!props.purchaseAble} onClick={props.toggleModal}>Oreder Now</Button>
+            <Button style={{ backgroundColor: "#D70F64" }} disabled={!props.purchaseAble} onClick={props.toggleModal} >Oreder Now</Button>
         </Card>
     </div>)
 }
