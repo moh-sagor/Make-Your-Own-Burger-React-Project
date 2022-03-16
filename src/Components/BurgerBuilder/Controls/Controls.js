@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardBody, CardFooter, CardHeader, Button } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
 
 
 const controls = [
@@ -21,9 +20,7 @@ const BuildControl = props => {
 }
 const Controls = props => {
     return (<div className="container ml-md-5" style={{ textAlign: "center" }}>
-        <Button style={{ backgroundColor: "#D70F64" }} disabled={!props.purchaseAble} className='btn btn-sm'>
-            <NavLink exact to="/checkout" className="NavLink">Check Out</NavLink>
-        </Button>
+
         <Card style={{
             marginTop: "30px",
             marginBottom: "20px",
