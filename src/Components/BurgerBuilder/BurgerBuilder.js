@@ -5,6 +5,7 @@ import Summary from "./Summary/Summary";
 import { Modal, ModalBody, ModalHeader, ModalFooter, Button } from 'reactstrap';
 import { connect } from "react-redux";
 import { addIngredient, removeIngredient, updatePurchaseable } from '../../redux/actionCreators';
+import { NavLink } from 'react-router-dom';
 
 const mapStateToProps = state => {
     return {
@@ -71,7 +72,7 @@ class BurgerBuilder extends Component {
                         <Summary ingredients={this.props.ingredients} />
                     </ModalBody>
                     <ModalFooter>
-                        {/* <Button color="success" onClick={this.handleCheckout}>Continue to checkout</Button> */}
+                        <NavLink exact to="/checkout" className="NavLink"><Button style={{ backgroundColor: "#D70F64" }}>Checkout</Button></NavLink>
                         <Button color="secondary" onClick={this.toggleModal}>Cancel</Button>
 
                     </ModalFooter>
