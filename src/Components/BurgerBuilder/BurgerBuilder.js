@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import { addIngredient, removeIngredient, updatePurchaseable } from '../../redux/actionCreators';
 import { NavLink } from 'react-router-dom';
 
+
 const mapStateToProps = state => {
     return {
         ingredients: state.ingredients,

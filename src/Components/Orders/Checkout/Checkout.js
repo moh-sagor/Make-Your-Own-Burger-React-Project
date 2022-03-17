@@ -6,6 +6,7 @@ import axios from 'axios';
 import Spinner from '../../Spinner/Spinner';
 import { resetIngredient } from '../../../redux/actionCreators';
 
+
 const mapStateToProps = state => {
     return {
         ingredients: state.ingredients,
