@@ -21,3 +21,9 @@ export const updatePurchaseable = () => {
         type: actionTypes.UPDATE_PURCHASEABLE,
     }
 }
+
+export const resetIngredient = () => {
+    return {
+        type: actionTypes.RESET_INGREDIENT,
+    }
+}
