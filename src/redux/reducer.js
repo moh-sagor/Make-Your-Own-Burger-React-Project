@@ -1,4 +1,6 @@
 import * as actionTypes from './actionTypes';
+
+
 const ingredient_prices = {
     salad: 20,
     cheese: 45,
@@ -12,6 +14,9 @@ const initialState = {
         { type: 'cheese', amount: 0 },
         { type: 'meat', amount: 0 }
     ],
+    orders: [],
+    orderLoading: true,
+    orderErr: false,
     totalPrice: 80,
     purchaseAble: false,
 }
@@ -61,6 +66,20 @@ export const reducer = (state = initialState, action) => {
                 ],
                 totalPrice: 80,
                 purchaseAble: false,
+            }
+        case actionTypes.LOAD_ORDERS:
+            let orders = [];
+            for (let key in action.payload) {
+                orders.push({
+                    ...action.payload[key],
+                    id: key,
+                })
+            }
+            return {
+                ...state,
+                orders: orders,
+                orderLoading: false,
+
             }
 
 
