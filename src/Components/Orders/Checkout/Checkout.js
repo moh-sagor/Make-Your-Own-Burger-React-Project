@@ -23,6 +23,7 @@ const mapDispatchToProps = dispatch => {
 class Checkout extends Component {
     state = {
         values: {
+            cus_name: "",
             deliveryAddress: "",
             phone: "",
             paymentType: "Cash On Delivery",
@@ -95,6 +96,8 @@ class Checkout extends Component {
                     padding: "20px",
                     backgroundColor: "#D70F64",
                 }}>
+                    <input name="cus_name" className="form-control" value={this.state.values.cus_name} placeholder="Your Name" onChange={(e) => this.inputChangerHandler(e)} />
+                    <br />
                     <textarea name="deliveryAddress" value={this.state.values.deliveryAddress} className="form-control" placeholder="Your Address" onChange={(e) => this.inputChangerHandler(e)}></textarea>
                     <br />
                     <input name="phone" className="form-control" value={this.state.values.phone} placeholder="Your Phone Number" onChange={(e) => this.inputChangerHandler(e)} />

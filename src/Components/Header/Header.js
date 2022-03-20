@@ -5,9 +5,11 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
+    Button,
 } from 'reactstrap';
 import Logo from '../../assets/logo.png';
 import { NavLink } from 'react-router-dom';
+
 
 const Header = () => {
     return (
@@ -25,6 +27,9 @@ const Header = () => {
                     </NavItem>
                     <NavItem>
                         <NavLink exact to="/orders" className="NavLink">Orders</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink exact to="/login" className="NavLink"><Button className='btn btn-success'>Login</Button></NavLink>
                     </NavItem>
 
                 </Nav>

@@ -27,7 +27,6 @@ const Controls = props => {
             textAlign: "center",
             boxShadow: "1px 1px #888888",
             border: "1px solid grey",
-            boxShadow: "1px 1px #888888",
             borderRadius: "5px",
             padding: "20px",
         }}>

@@ -79,7 +79,12 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 orders: orders,
                 orderLoading: false,
-
+            }
+        case actionTypes.ORDER_LOAD_FAILED:
+            return {
+                ...state,
+                orderErr: true,
+                orderLoading: false,
             }
 
 
