@@ -19,6 +19,8 @@ const initialState = {
     orderErr: false,
     totalPrice: 80,
     purchaseAble: false,
+    token: null,
+    userId: null,
 }
 
 export const reducer = (state = initialState, action) => {
@@ -85,6 +87,14 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 orderErr: true,
                 orderLoading: false,
+            }
+
+        // authentication case 
+        case actionTypes.AUTH_SUCCESS:
+            return {
+                ...state,
+                token: action.payload.token,
+                userId: action.payload.userId,
             }
 
 
