@@ -21,6 +21,8 @@ const initialState = {
     purchaseAble: false,
     token: null,
     userId: null,
+    authLoading: false,
+    authFailedMsg: null,
 }
 
 export const reducer = (state = initialState, action) => {
@@ -102,6 +104,11 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 token: null,
                 userId: null,
+            }
+        case actionTypes.AUTH_LOADING:
+            return {
+                ...state,
+                authLoading: action.payload,
             }
 
         default:
