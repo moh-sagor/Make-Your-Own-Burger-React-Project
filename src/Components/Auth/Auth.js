@@ -69,12 +69,6 @@ class Auth extends Component {
                             padding: "15px",
                             borderRadius: "7px",
                         }}>
-                            <button style={{
-                                width: "100%",
-                                backgroundColor: "#D70F64",
-                                color: "white",
-                            }} className="btn btn-lg" onClick={this.switchModeHandler}>Switch to {this.state.mode === "Sign Up" ? "Login" : "Sign Up"}</button>
-                            <br /><br />
                             <form onSubmit={handleSubmit}>
                                 <input
                                     name="email"
@@ -109,6 +103,13 @@ class Auth extends Component {
 
                                 <button type="submit" className="btn btn-success">{this.state.mode === "Sign Up" ? "Sign Up" : "Login"}</button>
                             </form>
+                            <br />
+                            <button style={{
+                                width: "100%",
+                                backgroundColor: "#D70F64",
+                                color: "white",
+                            }} className="btn btn-lg" onClick={this.switchModeHandler}>Switch to {this.state.mode === "Sign Up" ? "Login" : "Sign Up"}</button>
+                            <br />
                         </div>)}
                 </Formik>
             </div>

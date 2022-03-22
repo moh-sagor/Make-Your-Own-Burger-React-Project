@@ -38,6 +38,8 @@ const Header = (props) => {
                 <NavItem>
                     <NavLink exact to="/orders" className="NavLink">Orders</NavLink>
                 </NavItem>
+                <NavItem><NavLink exact to="/logout" className="NavLink"><Button className='btn btn-success'>Logout</Button></NavLink></NavItem>
+
             </Nav>
         )
 
