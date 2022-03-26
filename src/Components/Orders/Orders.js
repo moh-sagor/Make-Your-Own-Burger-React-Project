@@ -9,19 +9,21 @@ const mapStateToProps = state => {
         orders: state.orders,
         orderLoading: state.orderLoading,
         orderErr: state.orderErr,
+        token: state.token,
+        userId: state.userId,
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchOrders: () => dispatch(fetchOrders()),
+        fetchOrders: (token, userId) => dispatch(fetchOrders(token, userId)),
     }
 }
 
 
 class Orders extends Component {
     componentDidMount() {
-        this.props.fetchOrders();
+        this.props.fetchOrders(this.props.token, this.props.userId);
     }
     componentDidUpdate() {
         // console.log(this.props);
@@ -66,3 +68,15 @@ class Orders extends Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Orders);
+
+
+// ==========================================Firebase Rules =====================================================
+// {
+//     "rules": {
+//       "orders":{
+//       ".read": "auth !=null",  // 2022-4-15
+//       ".write": "auth !=null",  // 2022-4-15
+//         ".indexOn":["userId"]
+//       }
+//     }
+//   }
